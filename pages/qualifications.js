@@ -40,7 +40,7 @@ function Qualifications() {
               smallText={'year of full time software engineering experience'}
             />
             <StatText
-              number={5}
+              number={6}
               smallText={'cloud provider certifications'}
             />
             <StatText
