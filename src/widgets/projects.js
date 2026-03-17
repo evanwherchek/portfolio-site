@@ -1,5 +1,5 @@
+import projectsConfig from '../data/projects.yaml';
 import ProjectWindow from './custom/project-window';
-
 import { motion } from 'motion/react';
 import { Button } from '@mui/material';
 
@@ -10,60 +10,24 @@ function Projects() {
         Featured Projects
       </h2>
       <div className="flex flex-wrap items-center justify-center gap-[50px]">
-        <motion.div
-          initial={{ opacity: 0, y: 25 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{
-            duration: 2,
-            delay: 0.5,
-          }}
-        >
-          <ProjectWindow
-            sourceImage="/images/resutailor.png"
-            projectTitle={'Resutailor'}
-            description={'Generate a fine-tuned resume for any application.'}
-            year="2024"
-            link="https://github.com/evanwherchek/resutailor"
-            categories={['Web', 'AI']}
-          />
-        </motion.div>
-        <motion.div
-          initial={{ opacity: 0, y: 25 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{
-            duration: 2,
-            delay: 1,
-          }}
-        >
-          <ProjectWindow
-            sourceImage="/images/coatails.png"
-            projectTitle={'Coatails'}
-            description={'Make strong professional connections IRL.'}
-            year="2021 - 2024"
-            link="https://github.com/evanwherchek/coatails"
-            categories={['Mobile', 'Full Stack']}
-          />
-        </motion.div>
-        <motion.div
-          initial={{ opacity: 0, y: 25 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{
-            duration: 2,
-            delay: 1.5,
-          }}
-        >
-          <ProjectWindow
-            sourceImage="/images/portfolio-site.png"
-            projectTitle={'Portfolio Site'}
-            description={'A complete developer website.'}
-            year="2025"
-            link="https://github.com/evanwherchek/portfolio-site"
-            categories={['Web']}
-          />
-        </motion.div>
+        {projectsConfig.projects.map((project, index) => (
+          <motion.div
+            key={project.title}
+            initial={{ opacity: 0, y: 25 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 2, delay: 0.5 + index * 0.5 }}
+          >
+            <ProjectWindow
+              sourceImage={project.image}
+              projectTitle={project.title}
+              description={project.description}
+              year={project.year}
+              link={project.link}
+              categories={project.categories}
+            />
+          </motion.div>
+        ))}
       </div>
       <Button
         variant="text"
