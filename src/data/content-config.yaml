@@ -1,0 +1,67 @@
+projects:
+  - title: Resutailor
+    description: Generate a fine-tuned resume for any application.
+    image: /images/resutailor.png
+    year: "2024"
+    link: https://github.com/evanwherchek/resutailor
+    categories:
+      - Web
+      - AI
+  - title: Coatails
+    description: Make strong professional connections IRL.
+    image: /images/coatails.png
+    year: "2021 - 2024"
+    link: https://github.com/evanwherchek/coatails
+    categories:
+      - Mobile
+      - Full Stack
+  - title: Portfolio Site
+    description: A complete developer website.
+    image: /images/portfolio-site.png
+    year: "2025"
+    link: https://github.com/evanwherchek/portfolio-site
+    categories:
+      - Web
+
+stats:
+  - number: 1
+    text: year of full time software engineering experience
+  - number: 6
+    text: cloud provider certifications
+  - number: 8
+    text: years of building software projects
+
+education:
+  - school: Texas A&M University
+    degree: BA in Computing
+    years: "2021 - 2024"
+    gpa: "3.3"
+    logo: /images/tamu-logo.png
+    alt: Texas A&M Logo
+
+experience:
+  - company: NISC
+    role: Software Developer
+    period: "2024 - Present"
+    logo: /images/nisc-logo.png
+    alt: NISC Logo
+
+technologies:
+  - url: https://img.shields.io/badge/-Java-000?style=flat&logo=openjdk&logoColor=007396
+    alt: Java badge
+  - url: https://img.shields.io/badge/-Python-000?style=flat&logo=Python
+    alt: Python badge
+  - url: https://img.shields.io/badge/-Javascript-000?style=flat&logo=JavaScript
+    alt: Javascript badge
+  - url: https://img.shields.io/badge/-SQL-000?style=flat&logo=MySQL
+    alt: SQL badge
+  - url: https://custom-icon-badges.demolab.com/badge/-AWS-000?style=flat&logo=aws&logoColor=FF9900
+    alt: AWS badge
+  - url: https://img.shields.io/badge/-Google%20Cloud-000?style=flat&logo=Google-Cloud&logoColor=4285F4
+    alt: GCP badge
+  - url: https://img.shields.io/badge/-Flutter-000?style=flat&logo=Flutter&logoColor=02569B
+    alt: Flutter badge
+
+resume:
+  path: /resume.pdf
+  filename: Resume - Evan Herchek

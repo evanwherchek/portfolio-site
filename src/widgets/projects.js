@@ -1,4 +1,4 @@
-import projectsConfig from '../data/projects.yaml';
+import config from '../data/content-config.yaml';
 import ProjectWindow from './custom/project-window';
 import { motion } from 'motion/react';
 import { Button } from '@mui/material';
@@ -10,7 +10,7 @@ function Projects() {
         Featured Projects
       </h2>
       <div className="flex flex-wrap items-center justify-center gap-[50px]">
-        {projectsConfig.projects.map((project, index) => (
+        {config.projects.map((project, index) => (
           <motion.div
             key={project.title}
             initial={{ opacity: 0, y: 25 }}

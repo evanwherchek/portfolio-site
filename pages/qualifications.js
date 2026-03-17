@@ -5,14 +5,14 @@ import { Button } from '@mui/material';
 import { Download } from '@mui/icons-material';
 import ProjectWindow from '../src/widgets/custom/project-window';
 import MobileHeader from '../src/widgets/mobile-header';
-import projectsConfig from '../src/data/projects.yaml';
+import config from '../src/data/content-config.yaml';
 
 function Qualifications() {
   const handleFileDownload = () => {
     const link = document.createElement('a');
 
-    link.href = '/resume.pdf';
-    link.download = 'Resume - Evan Herchek';
+    link.href = config.resume.path;
+    link.download = config.resume.filename;
 
     document.body.appendChild(link);
     link.click();
@@ -36,18 +36,9 @@ function Qualifications() {
           }}
         >
           <div className="flex flex-col align-top justify-center gap-12">
-            <StatText
-              number={1}
-              smallText={'year of full time software engineering experience'}
-            />
-            <StatText
-              number={6}
-              smallText={'cloud provider certifications'}
-            />
-            <StatText
-              number={8}
-              smallText={'years of building software projects'}
-            />
+            {config.stats.map((stat) => (
+              <StatText key={stat.text} number={stat.number} smallText={stat.text} />
+            ))}
           </div>
         </motion.div>
         <motion.div
@@ -64,47 +55,31 @@ function Qualifications() {
               <h2 className="font-poly text-white underline font-thin text-2xl text-center mb-4">
                 Education
               </h2>
-              <div className="flex flex-row items-center justify-center mt-1">
-                <Image
-                  src="/images/tamu-logo.png"
-                  width={40}
-                  height={40}
-                  className="mr-4"
-                  alt="Texas A&M Logo"
-                />
-                <div>
-                  <p className="font-poly text-white text-xl">
-                    Texas A&M University
-                  </p>
-                  <p className="font-poly text-white text-xl">
-                    BA in Computing
-                  </p>
-                  <p className="font-poly text-white text-xl">
-                    2021 - 2024, GPA: 3.3
-                  </p>
+              {config.education.map((edu) => (
+                <div key={edu.school} className="flex flex-row items-center justify-center mt-1">
+                  <Image src={edu.logo} width={40} height={40} className="mr-4" alt={edu.alt} />
+                  <div>
+                    <p className="font-poly text-white text-xl">{edu.school}</p>
+                    <p className="font-poly text-white text-xl">{edu.degree}</p>
+                    <p className="font-poly text-white text-xl">{edu.years}, GPA: {edu.gpa}</p>
+                  </div>
                 </div>
-              </div>
+              ))}
             </div>
             <div>
               <h2 className="font-poly text-white underline font-thin text-2xl text-center mb-4">
                 Experience
               </h2>
-              <div className="flex flex-row items-center justify-center mt-1">
-                <Image
-                  src="/images/nisc-logo.png"
-                  width={40}
-                  height={40}
-                  className="mr-4"
-                  alt="NISC Logo"
-                />
-                <div>
-                  <p className="font-poly text-white text-xl">NISC</p>
-                  <p className="font-poly text-white text-xl">
-                    Software Developer
-                  </p>
-                  <p className="font-poly text-white text-xl">2024 - Present</p>
+              {config.experience.map((exp) => (
+                <div key={exp.company} className="flex flex-row items-center justify-center mt-1">
+                  <Image src={exp.logo} width={40} height={40} className="mr-4" alt={exp.alt} />
+                  <div>
+                    <p className="font-poly text-white text-xl">{exp.company}</p>
+                    <p className="font-poly text-white text-xl">{exp.role}</p>
+                    <p className="font-poly text-white text-xl">{exp.period}</p>
+                  </div>
                 </div>
-              </div>
+              ))}
             </div>
           </div>
         </motion.div>
@@ -122,62 +97,17 @@ function Qualifications() {
             Top languages and technologies
           </h2>
           <div className="flex flex-wrap w-2/3 items-center justify-center gap-2">
-            <Image
-              src="https://img.shields.io/badge/-Java-000?style=flat&logo=openjdk&logoColor=007396"
-              alt="Java badge"
-              width={0}
-              height={0}
-              className="h-7 w-auto"
-              unoptimized
-            />
-            <Image
-              src="https://img.shields.io/badge/-Python-000?style=flat&logo=Python"
-              alt="Python badge"
-              width={0}
-              height={0}
-              className="h-7 w-auto"
-              unoptimized
-            />
-            <Image
-              src="https://img.shields.io/badge/-Javascript-000?style=flat&logo=JavaScript"
-              alt="Javascript badge"
-              width={0}
-              height={0}
-              className="h-7 w-auto"
-              unoptimized
-            />
-            <Image
-              src="https://img.shields.io/badge/-SQL-000?style=flat&logo=MySQL"
-              alt="SQL badge"
-              width={0}
-              height={0}
-              className="h-7 w-auto"
-              unoptimized
-            />
-            <Image
-              src="https://custom-icon-badges.demolab.com/badge/-AWS-000?style=flat&logo=aws&logoColor=FF9900"
-              alt="AWS badge"
-              width={0}
-              height={0}
-              className="h-7 w-auto"
-              unoptimized
-            />
-            <Image
-              src="https://img.shields.io/badge/-Google%20Cloud-000?style=flat&logo=Google-Cloud&logoColor=4285F4"
-              alt="GCP badge"
-              width={0}
-              height={0}
-              className="h-7 w-auto"
-              unoptimized
-            />
-            <Image
-              src="https://img.shields.io/badge/-Flutter-000?style=flat&logo=Flutter&logoColor=02569B"
-              alt="Flutter badge"
-              width={0}
-              height={0}
-              className="h-7 w-auto"
-              unoptimized
-            />
+            {config.technologies.map((tech) => (
+              <Image
+                key={tech.alt}
+                src={tech.url}
+                alt={tech.alt}
+                width={0}
+                height={0}
+                className="h-7 w-auto"
+                unoptimized
+              />
+            ))}
           </div>
         </motion.div>
       </div>
@@ -186,7 +116,7 @@ function Qualifications() {
           Featured Projects
         </h2>
         <div className="flex flex-row flex-wrap items-center justify-center gap-[50px]">
-          {projectsConfig.projects.map((project, index) => (
+          {config.projects.map((project, index) => (
             <motion.div
               key={project.title}
               initial={{ opacity: 0, y: 25 }}
