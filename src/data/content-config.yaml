@@ -7,14 +7,14 @@ projects:
     categories:
       - Web
       - AI
-  - title: Coatails
-    description: Make strong professional connections IRL.
-    image: /images/coatails.png
-    year: "2021 - 2024"
-    link: https://github.com/evanwherchek/coatails
+  - title: Courier
+    description: Weekly reports on personal goals and metrics.
+    image: /images/sun.png
+    year: "2026"
+    link: https://github.com/evanwherchek/courier
     categories:
-      - Mobile
-      - Full Stack
+      - Cloud
+      - Batch Processing
   - title: Portfolio Site
     description: A complete developer website.
     image: /images/portfolio-site.png
