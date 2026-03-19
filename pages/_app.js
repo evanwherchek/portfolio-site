@@ -16,8 +16,8 @@ const poly = Poly({
 function App({ Component, pageProps }) {
   return (
     <div className={`${inter.variable} ${poly.variable}`}>
-      <Analytics />
       <Component {...pageProps} />
+      <Analytics />
     </div>
   );
 }
