@@ -14,6 +14,7 @@ module.exports = {
         'soft-white': '#FFF8F4',
         'comfort-blue': '#20b3ff',
         'showcase-grey': '#1b1f23',
+        'deep-navy': '#0D1628',
         'panel-blue': '#010B3C',
         'background-white': '#D5D5D5',
       },

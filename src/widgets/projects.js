@@ -5,16 +5,18 @@ import { Button } from '@mui/material';
 
 function Projects() {
   return (
-    <div className="w-full bg-showcase-grey flex flex-col items-center justify-center py-32">
-      <h2 className="font-poly text-white font-thin text-5xl mb-12 underline">
-        Featured Projects
+    <div className="w-full bg-navy flex flex-col items-center justify-center py-32">
+      <h2 className="font-poly font-thin text-5xl mb-4">
+        <span className="text-comfort-blue">Featured</span>{' '}
+        <span className="text-white">Projects</span>
       </h2>
+      <div className="w-16 h-px bg-comfort-blue opacity-60 mb-12" />
       <div className="flex flex-wrap items-center justify-center gap-[50px]">
         {config.projects.map((project, index) => (
           <motion.div
             key={project.title}
-            initial={{ opacity: 0, y: 25 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, x: index % 2 === 0 ? -40 : 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 2, delay: 0.5 + index * 0.5 }}
           >
@@ -30,15 +32,17 @@ function Projects() {
         ))}
       </div>
       <Button
-        variant="text"
+        variant="outlined"
         sx={{
           color: '#ffffff',
-          textDecoration: 'underline',
+          borderColor: '#ffffff',
           fontWeight: 'bold',
           textTransform: 'none',
           borderRadius: '10px',
           fontSize: '1rem',
           marginTop: '3rem',
+          paddingX: '1.5rem',
+          paddingY: '0.5rem',
         }}
         onClick={() => {
           window.open('https://github.com/evanwherchek', '_blank');

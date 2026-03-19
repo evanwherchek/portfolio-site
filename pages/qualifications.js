@@ -21,11 +21,12 @@ function Qualifications() {
 
   return (
     <div>
-      <div className="w-full bg-showcase-grey flex flex-col items-center justify-center pt-16 pb-12">
+      <div className="w-full bg-navy flex flex-col items-center justify-center pt-16 pb-12">
         <MobileHeader />
-        <h1 className="font-poly text-white font-thin text-4xl mt-8 mb-8 underline">
+        <h1 className="font-poly text-comfort-blue font-thin text-4xl mt-8 mb-4">
           Qualifications
         </h1>
+        <div className="w-16 h-px bg-comfort-blue opacity-60 mb-8" />
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -51,8 +52,8 @@ function Qualifications() {
           }}
         >
           <div className="flex flex-col items-center justify-between mt-12 gap-12 px-4">
-            <div>
-              <h2 className="font-poly text-white underline font-thin text-2xl text-center mb-4">
+            <div className="bg-panel-blue rounded-2xl p-4 border border-white/10 w-full">
+              <h2 className="font-poly text-comfort-blue font-thin text-2xl text-center mb-4">
                 Education
               </h2>
               {config.education.map((edu) => (
@@ -66,8 +67,8 @@ function Qualifications() {
                 </div>
               ))}
             </div>
-            <div>
-              <h2 className="font-poly text-white underline font-thin text-2xl text-center mb-4">
+            <div className="bg-panel-blue rounded-2xl p-4 border border-white/10 w-full">
+              <h2 className="font-poly text-comfort-blue font-thin text-2xl text-center mb-4">
                 Experience
               </h2>
               {config.experience.map((exp) => (
@@ -93,28 +94,32 @@ function Qualifications() {
           }}
           className="flex flex-col items-center justify-center gap-4 mt-12 px-4"
         >
-          <h2 className="font-poly text-white font-thin text-2xl underline text-center mb-4">
-            Top languages and technologies
-          </h2>
-          <div className="flex flex-wrap w-2/3 items-center justify-center gap-2">
-            {config.technologies.map((tech) => (
-              <Image
-                key={tech.alt}
-                src={tech.url}
-                alt={tech.alt}
-                width={0}
-                height={0}
-                className="h-7 w-auto"
-                unoptimized
-              />
-            ))}
+          <div className="bg-panel-blue rounded-2xl p-4 border border-white/10 flex flex-col items-center gap-4 w-full">
+            <h2 className="font-poly text-comfort-blue font-thin text-2xl text-center mb-4">
+              Top languages and technologies
+            </h2>
+            <div className="flex flex-wrap w-2/3 items-center justify-center gap-2">
+              {config.technologies.map((tech) => (
+                <Image
+                  key={tech.alt}
+                  src={tech.url}
+                  alt={tech.alt}
+                  width={0}
+                  height={0}
+                  className="h-7 w-auto"
+                  unoptimized
+                />
+              ))}
+            </div>
           </div>
         </motion.div>
       </div>
-      <div className="w-full bg-showcase-grey flex flex-col items-center justify-center pb-16">
-        <h2 className="font-poly text-white font-thin text-4xl mt-16 mb-12 underline">
-          Featured Projects
+      <div className="w-full bg-navy flex flex-col items-center justify-center pb-16">
+        <h2 className="font-poly font-thin text-4xl mt-16 mb-4">
+          <span className="text-comfort-blue">Featured</span>{' '}
+          <span className="text-white">Projects</span>
         </h2>
+        <div className="w-16 h-px bg-comfort-blue opacity-60 mb-12" />
         <div className="flex flex-row flex-wrap items-center justify-center gap-[50px]">
           {config.projects.map((project, index) => (
             <motion.div
@@ -136,15 +141,17 @@ function Qualifications() {
           ))}
         </div>
         <Button
-          variant="text"
+          variant="outlined"
           sx={{
             color: '#ffffff',
-            textDecoration: 'underline',
+            borderColor: '#ffffff',
             fontWeight: 'bold',
             textTransform: 'none',
             borderRadius: '10px',
             fontSize: '1rem',
             marginTop: '3rem',
+            paddingX: '1.5rem',
+            paddingY: '0.5rem',
           }}
           onClick={() => {
             window.open('https://github.com/evanwherchek', '_blank');

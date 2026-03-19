@@ -18,10 +18,11 @@ function Qualifications() {
   };
 
   return (
-    <div className="w-full bg-showcase-grey flex flex-col items-center justify-center py-32">
-      <h1 className="font-poly text-white font-thin text-5xl mb-12 underline">
-        Qualifications
+    <div className="w-full bg-navy flex flex-col items-center justify-center py-32">
+      <h1 className="font-poly font-thin text-5xl mb-4">
+        <span className="text-comfort-blue">Qualifications</span>
       </h1>
+      <div className="w-16 h-px bg-comfort-blue opacity-60 mb-12" />
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -57,8 +58,8 @@ function Qualifications() {
           }}
           className="flex flex-col w-1/2 gap-12"
         >
-          <div>
-            <h2 className="font-poly text-white underline font-thin text-3xl text-left mb-4">
+          <div className="bg-panel-blue rounded-2xl p-6 border border-white/10">
+            <h2 className="font-poly text-comfort-blue font-thin text-3xl text-left mb-4">
               Education
             </h2>
             <div className="flex flex-row items-center justify-start gap-8">
@@ -80,8 +81,8 @@ function Qualifications() {
               </div>
             </div>
           </div>
-          <div>
-            <h2 className="font-poly text-white underline font-thin text-3xl text-left mb-4">
+          <div className="bg-panel-blue rounded-2xl p-6 border border-white/10">
+            <h2 className="font-poly text-comfort-blue font-thin text-3xl text-left mb-4">
               Experience
             </h2>
             <div className="flex flex-row items-center justify-start gap-8">
@@ -112,7 +113,8 @@ function Qualifications() {
           }}
           className="flex flex-col w-1/2 items-center justify-center gap-4"
         >
-          <h2 className="font-poly text-white font-thin text-3xl underline mb-4">
+          <div className="bg-panel-blue rounded-2xl p-6 border border-white/10 flex flex-col items-center gap-4">
+          <h2 className="font-poly text-comfort-blue font-thin text-3xl mb-4">
             Top languages and technologies
           </h2>
           <div className="flex flex-wrap w-2/3 items-center justify-center gap-2">
@@ -172,6 +174,7 @@ function Qualifications() {
               className="h-7 w-auto"
               unoptimized
             />
+          </div>
           </div>
         </motion.div>
       </div>
