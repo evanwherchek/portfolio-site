@@ -3,8 +3,7 @@ import SiteHeader from '../src/widgets/site-header';
 import Title from '../src/widgets/title';
 import About from '../src/widgets/about';
 import Inspirations from '../src/widgets/inspirations';
-import Projects from '../src/widgets/projects';
-import Qualifications from '../src/widgets/qualifications';
+import DeepDive from '../src/widgets/deep-dive';
 import Contact from '../src/widgets/contact';
 import Linktree from '../src/widgets/linktree';
 import Head from "next/head";
@@ -113,12 +112,7 @@ function Index() {
             <section id="inspirations">
               <Inspirations />
             </section>
-            <section id="projects">
-              <Projects />
-            </section>
-            <section id="qualifications">
-              <Qualifications />
-            </section>
+            <DeepDive />
             <section id="contact">
               <Contact />
             </section>

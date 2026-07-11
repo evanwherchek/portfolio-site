@@ -1,12 +1,4 @@
 projects:
-  - title: Resutailor
-    description: Generate a fine-tuned resume for any application.
-    image: /images/resutailor.png
-    year: "2024"
-    link: https://github.com/evanwherchek/resutailor
-    categories:
-      - Web
-      - AI
   - title: Courier
     description: Weekly reports on personal goals and metrics.
     image: /images/sun.png
@@ -15,6 +7,14 @@ projects:
     categories:
       - Cloud
       - Batch Processing
+  - title: Resutailor
+    description: Generate a fine-tuned resume for any application.
+    image: /images/resutailor.png
+    year: "2024"
+    link: https://github.com/evanwherchek/resutailor
+    categories:
+      - Web
+      - AI
   - title: Portfolio Site
     description: A complete developer website.
     image: /images/portfolio-site.png
