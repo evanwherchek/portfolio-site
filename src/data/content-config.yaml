@@ -24,9 +24,9 @@ projects:
       - Web
 
 stats:
-  - number: 1
-    text: year of full time software engineering experience
-  - number: 7
+  - number: 1.5
+    text: years of full time software engineering experience
+  - number: 8
     text: cloud provider certifications
   - number: 8
     text: years of building software projects
