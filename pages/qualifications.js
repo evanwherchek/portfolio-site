@@ -9,13 +9,13 @@ const pillClasses =
 function Qualifications() {
   const credentials = [...config.education, ...config.experience];
   const ticker = [
-    { text: `${config.stats[0].number} YR EXPERIENCE`, accent: true },
+    { text: `${config.stats[0].number} YRS EXPERIENCE`, accent: true },
     { text: `${config.stats[1].number} CLOUD CERTS`, accent: false },
     { text: `${config.stats[2].number} YRS BUILDING`, accent: true },
   ];
 
   const handleFileDownload = () => {
-    const link = document.createElement('a');
+  const link = document.createElement('a');
 
     link.href = config.resume.path;
     link.download = config.resume.filename;
