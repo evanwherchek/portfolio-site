@@ -22,6 +22,8 @@ module.exports = {
         'fade-in': 'fadeIn 0.8s ease-in-out',
         'fade-out': 'fadeOut 0.8s ease-in-out',
         ripple: 'ripple var(--duration, 2s) ease calc(var(--i, 0)*.2s) infinite',
+        'glow-drift-1': 'glowDrift1 26s ease-in-out infinite',
+        'glow-drift-2': 'glowDrift2 30s ease-in-out infinite',
       },
       keyframes: {
         fadeIn: {
@@ -35,6 +37,14 @@ module.exports = {
         ripple: {
           '0%, 100%': { transform: 'translate(-50%, -50%) scale(1)' },
           '50%': { transform: 'translate(-50%, -50%) scale(0.9)' },
+        },
+        glowDrift1: {
+          '0%, 100%': { transform: 'translate(-6%, -4%) scale(1)' },
+          '50%': { transform: 'translate(4%, 6%) scale(1.15)' },
+        },
+        glowDrift2: {
+          '0%, 100%': { transform: 'translate(5%, 4%) scale(1)' },
+          '50%': { transform: 'translate(-5%, -6%) scale(1.1)' },
         },
       },
     },
