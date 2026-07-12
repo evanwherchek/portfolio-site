@@ -9,7 +9,9 @@ import Image from 'next/image';
 function Linktree({ scrollToSection }) {
   return (
     <div className="relative min-h-screen w-full bg-navy flex flex-col items-center justify-center">
-      <Threads amplitude={1} distance={0} enableMouseInteraction={false} />
+      <div className="absolute inset-0">
+        <Threads amplitude={1} distance={0} enableMouseInteraction={false} />
+      </div>
       <div className="absolute inset-0 flex flex-col items-center justify-between py-12">
         <div className="flex-1 flex flex-col items-center justify-center">
           <motion.div
@@ -48,39 +50,6 @@ function Linktree({ scrollToSection }) {
               ease: [0, 0.71, 0.2, 1.01],
             }}
           >
-            <Button
-              variant="contained"
-              startIcon={<LinkedInIcon />}
-              sx={{
-                background: 'linear-gradient(to right, #2045FF, #20a6ff)',
-                textTransform: 'none',
-                borderRadius: '10px',
-                margin: '0.5rem',
-              }}
-              onClick={() => {
-                window.open(
-                  'https://www.linkedin.com/in/evan-herchek/',
-                  '_blank'
-                );
-              }}
-            >
-              LinkedIn
-            </Button>
-            <Button
-              variant="contained"
-              startIcon={<GitHubIcon />}
-              sx={{
-                background: 'linear-gradient(to right, #2045FF, #20a6ff)',
-                textTransform: 'none',
-                borderRadius: '10px',
-                margin: '0.5rem',
-              }}
-              onClick={() => {
-                window.open('https://github.com/evanwherchek', '_blank');
-              }}
-            >
-              GitHub
-            </Button>
           </motion.div>
         </div>
         <IconButton
