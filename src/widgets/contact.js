@@ -7,7 +7,6 @@ import Threads from './external/threads';
 function Contact() {
   return (
     <div className="relative min-h-screen w-full bg-navy flex flex-col items-center justify-center">
-      <Threads amplitude={1} distance={0} enableMouseInteraction={false} />
       <div className="absolute flex flex-col items-center justify-center inset-0 px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
