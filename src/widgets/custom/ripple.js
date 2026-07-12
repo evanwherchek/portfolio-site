@@ -1,0 +1,31 @@
+function Ripple({ mainCircleSize = 700, mainCircleOpacity = 0.24, numCircles = 8 }) {
+  return (
+    <div className="pointer-events-none absolute inset-0 select-none [mask-image:linear-gradient(to_bottom,white,transparent)]">
+      {Array.from({ length: numCircles }, (_, i) => {
+        const size = mainCircleSize + i * 70;
+        const opacity = mainCircleOpacity - i * 0.03;
+        const animationDelay = `${i * 0.06}s`;
+
+        return (
+          <div
+            key={i}
+            className="absolute animate-ripple rounded-full border border-comfort-blue bg-comfort-blue/10 shadow-xl"
+            style={{
+              '--i': i,
+              width: `${size}px`,
+              height: `${size}px`,
+              opacity,
+              animationDelay,
+              borderWidth: '1px',
+              top: '50%',
+              left: '50%',
+              transform: 'translate(-50%, -50%) scale(1)',
+            }}
+          />
+        );
+      })}
+    </div>
+  );
+}
+
+export default Ripple;

@@ -21,6 +21,7 @@ module.exports = {
       animation: {
         'fade-in': 'fadeIn 0.8s ease-in-out',
         'fade-out': 'fadeOut 0.8s ease-in-out',
+        ripple: 'ripple var(--duration, 2s) ease calc(var(--i, 0)*.2s) infinite',
       },
       keyframes: {
         fadeIn: {
@@ -30,6 +31,10 @@ module.exports = {
         fadeOut: {
           '0%': { opacity: '1' },
           '100%': { opacity: '0' },
+        },
+        ripple: {
+          '0%, 100%': { transform: 'translate(-50%, -50%) scale(1)' },
+          '50%': { transform: 'translate(-50%, -50%) scale(0.9)' },
         },
       },
     },

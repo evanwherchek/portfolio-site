@@ -1,12 +1,15 @@
 import { motion } from 'motion/react';
+import Ripple from './custom/ripple';
 
 function Inspirations() {
   return (
-    <div className="h-screen flex items-center justify-center flex-col bg-navy py-32">
-      <h2 className="font-poly text-white font-thin text-3xl lg:text-4xl text-center underline mb-8">
-        Things that I enjoy
+    <div className="relative overflow-hidden h-screen flex items-center justify-center flex-col bg-navy py-32">
+      <Ripple />
+      <h2 className="relative z-10 font-poly text-white font-thin text-3xl lg:text-4xl text-center underline mb-8">
+        Things that inspire me
       </h2>
       <motion.div
+        className="relative z-10"
         initial={{ opacity: 0, x: 50 }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
@@ -28,6 +31,7 @@ function Inspirations() {
         </div>
       </motion.div>
       <motion.div
+        className="relative z-10"
         initial={{ opacity: 0, x: -50 }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
@@ -48,6 +52,7 @@ function Inspirations() {
         </div>
       </motion.div>
       <motion.div
+        className="relative z-10"
         initial={{ opacity: 0, x: 50 }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
@@ -68,6 +73,7 @@ function Inspirations() {
         </div>
       </motion.div>
       <motion.div
+        className="relative z-10"
         initial={{ opacity: 0, x: -50 }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
@@ -88,6 +94,7 @@ function Inspirations() {
         </div>
       </motion.div>
       <motion.div
+        className="relative z-10"
         initial={{ opacity: 0, x: 50 }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}

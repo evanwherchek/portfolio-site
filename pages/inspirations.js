@@ -1,14 +1,17 @@
 import { motion } from 'motion/react';
 import MobileHeader from '../src/widgets/mobile-header';
+import Ripple from '../src/widgets/custom/ripple';
 
 function Inspirations() {
   return (
-    <div className="h-screen w-full flex items-center justify-center flex-col bg-navy pt-16">
+    <div className="relative overflow-hidden h-screen w-full flex items-center justify-center flex-col bg-navy pt-16">
+      <Ripple mainCircleSize={500}/>
       <MobileHeader />
-      <h2 className="font-poly text-white font-thin text-3xl text-center underline mb-2 mt-2">
-        Things that I enjoy
+      <h2 className="relative z-10 font-poly text-white font-thin text-3xl text-center underline mb-2 mt-2">
+        Things that inspire me
       </h2>
       <motion.div
+        className="relative z-10"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
@@ -38,6 +41,7 @@ function Inspirations() {
         </motion.div>
       </motion.div>
       <motion.div
+        className="relative z-10"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
@@ -67,6 +71,7 @@ function Inspirations() {
         </motion.div>
       </motion.div>
       <motion.div
+        className="relative z-10"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
@@ -96,6 +101,7 @@ function Inspirations() {
         </motion.div>
       </motion.div>
       <motion.div
+        className="relative z-10"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
@@ -125,6 +131,7 @@ function Inspirations() {
         </motion.div>
       </motion.div>
       <motion.div
+        className="relative z-10"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
