@@ -3,9 +3,9 @@ import Ripple from './custom/ripple';
 
 function Inspirations() {
   return (
-    <div className="relative overflow-hidden h-screen flex items-center justify-center flex-col bg-navy py-32">
+    <div className="relative overflow-hidden min-h-screen flex items-center justify-center flex-col bg-navy py-16 lg:py-32">
       <Ripple />
-      <h2 className="relative z-10 font-poly text-white font-thin text-3xl lg:text-4xl text-center underline mb-8">
+      <h2 className="relative z-10 font-poly text-white font-thin text-3xl lg:text-4xl text-center underline mb-4 lg:mb-8">
         Things that inspire me
       </h2>
       <motion.div

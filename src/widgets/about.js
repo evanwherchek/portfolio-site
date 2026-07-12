@@ -3,17 +3,18 @@ import Image from 'next/image';
 
 function About() {
   return (
-    <div className="w-full flex bg-soft-white items-center justify-center py-32">
-      <div className="flex items-center justify-center">
+    <div className="w-full flex bg-soft-white items-center justify-center py-20 px-6 lg:py-32 lg:px-0">
+      <div className="flex flex-col items-center justify-center lg:flex-row">
         <Image
           width={320}
           height={320}
+          className="w-40 h-40 lg:w-80 lg:h-80"
           src="/images/headshot.png"
           alt="Evan Herchek"
         />
-        <div className="w-12 ml-8" />
-        <div className="w-96">
-          <h2 className="font-poly text-black font-thin text-3xl text-left">
+        <div className="lg:w-12 lg:ml-8" />
+        <div className="max-w-md lg:w-96">
+          <h2 className="font-poly text-black font-thin text-3xl text-left mt-6 lg:mt-0">
             Hello!
           </h2>
           <p className="font-poly text-black font-thin text-lg mt-6 text-left">

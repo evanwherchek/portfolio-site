@@ -11,38 +11,22 @@ import Head from "next/head";
 function Index() {
   const [showHeader, setShowHeader] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
-  const titleRef = useRef(null);
+  const heroRef = useRef(null);
 
   useEffect(() => {
-    const checkMobile = () => {
-      const userAgent = window.navigator.userAgent.toLowerCase();
-      const mobileKeywords = [
-        'mobile',
-        'android',
-        'iphone',
-        'ipad',
-        'tablet',
-        'blackberry',
-        'windows phone',
-      ];
+    const mediaQuery = window.matchMedia('(max-width: 1023px)');
 
-      return (
-        mobileKeywords.some((keyword) => userAgent.includes(keyword)) ||
-        window.innerWidth <= 768
-      );
+    setIsMobile(mediaQuery.matches);
+
+    const handleChange = (event) => {
+      setIsMobile(event.matches);
     };
 
-    setIsMobile(checkMobile());
-
-    const handleResize = () => {
-      setIsMobile(checkMobile());
-    };
-
-    window.addEventListener('resize', handleResize);
+    mediaQuery.addEventListener('change', handleChange);
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        // Show header when Title is NOT intersecting (not in view)
+        // Show header when hero is NOT intersecting (not in view)
         setShowHeader(!entry.isIntersecting);
       },
       {
@@ -51,15 +35,15 @@ function Index() {
       }
     );
 
-    const currentTitleRef = titleRef.current;
-    if (currentTitleRef) {
-      observer.observe(currentTitleRef);
+    const currentHeroRef = heroRef.current;
+    if (currentHeroRef) {
+      observer.observe(currentHeroRef);
     }
 
     return () => {
-      window.removeEventListener('resize', handleResize);
-      if (currentTitleRef) {
-        observer.unobserve(currentTitleRef);
+      mediaQuery.removeEventListener('change', handleChange);
+      if (currentHeroRef) {
+        observer.unobserve(currentHeroRef);
       }
     };
   }, []);
@@ -94,31 +78,31 @@ function Index() {
         <meta name="twitter:description" content="Evan Herchek - Software Developer" />
         <meta name="twitter:image" content="https://evanherchek.dev/images/opengraph-preview.jpg" />
       </Head>
-      {isMobile ? (
-        <Linktree />
-      ) : (
-        <div>
-          <SiteHeader
-            scrollToSection={scrollToSection}
-            isVisible={showHeader}
-          />
-          <main>
-            <section id="home" ref={titleRef}>
+      <div>
+        <SiteHeader
+          scrollToSection={scrollToSection}
+          isVisible={showHeader}
+        />
+        <main>
+          <section id="home" ref={heroRef}>
+            {isMobile ? (
+              <Linktree scrollToSection={scrollToSection} />
+            ) : (
               <Title scrollToSection={scrollToSection} />
-            </section>
-            <section id="about">
-              <About />
-            </section>
-            <section id="inspirations">
-              <Inspirations />
-            </section>
-            <DeepDive />
-            <section id="contact">
-              <Contact />
-            </section>
-          </main>
-        </div>
-      )}
+            )}
+          </section>
+          <section id="about">
+            <About />
+          </section>
+          <section id="inspirations">
+            <Inspirations />
+          </section>
+          <DeepDive />
+          <section id="contact">
+            <Contact />
+          </section>
+        </main>
+      </div>
     </div>
   );
 }

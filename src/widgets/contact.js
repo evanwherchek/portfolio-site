@@ -6,9 +6,9 @@ import Threads from './external/threads';
 
 function Contact() {
   return (
-    <div className="relative h-screen w-full bg-navy flex flex-col items-center justify-center">
+    <div className="relative min-h-screen w-full bg-navy flex flex-col items-center justify-center">
       <Threads amplitude={1} distance={0} enableMouseInteraction={false} />
-      <div className="absolute flex flex-col items-center justify-center inset-0">
+      <div className="absolute flex flex-col items-center justify-center inset-0 px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -19,7 +19,7 @@ function Contact() {
           <h1 className="font-poly text-white font-thin text-4xl lg:text-5xl text-center mb-6">
             Building something <span className="text-comfort-blue">cool</span>? Let&#39;s talk about it!
           </h1>
-          <div className="flex flex-row items-center justify-center gap-8">
+          <div className="flex flex-col items-center justify-center gap-4 lg:flex-row lg:gap-8">
             <Button
               variant="contained"
               startIcon={<LinkedInIcon />}
