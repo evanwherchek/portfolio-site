@@ -36,7 +36,7 @@ function DeepDive() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Browse all &rarr;
+            Browse all
           </a>
         </div>
 

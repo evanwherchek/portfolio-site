@@ -18,8 +18,7 @@ function About() {
             Hello!
           </h2>
           <p className="font-poly text-black font-thin text-lg mt-6 text-left">
-            My name is Evan and I am a recent computer science graduate of Texas
-            A&M University. Currently, I am based in St. Louis at National
+            My name is Evan and I am an early career technologist. Currently, I am based in St. Louis at National
             Information Solutions Cooperative building software to power
             America&#39;s rural utility and telecom industries.
           </p>

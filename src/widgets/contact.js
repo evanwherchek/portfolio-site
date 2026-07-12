@@ -16,7 +16,7 @@ function Contact() {
           className="flex flex-col items-center"
         >
           <h1 className="font-poly text-white font-thin text-4xl lg:text-5xl text-center mb-6">
-            Building something <span className="text-comfort-blue">cool</span>? Let&#39;s talk about it!
+            Building something <span className="text-comfort-blue">cool</span>? Let&#39;s talk about it.
           </h1>
           <div className="flex flex-col items-center justify-center gap-4 lg:flex-row lg:gap-8">
             <Button
