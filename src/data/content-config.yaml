@@ -24,10 +24,10 @@ projects:
       - Web
 
 stats:
-  - number: 1.5
+  - number: 2
     text: years of full time software engineering experience
-  - number: 8
-    text: cloud provider certifications
+  - number: 10
+    text: technical certifications
   - number: 8
     text: years of building software projects
 
